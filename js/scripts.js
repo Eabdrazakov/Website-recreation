@@ -1,44 +1,44 @@
 window.onload = function () {
     const h1 = document.querySelector("h1");
     h1.remove();
-
-    const h2element1 = document.createElement("h2");
-    h2element1.append("Webpage Recreation Practice");
-
     const p = document.createElement("p");
-    p.append("The HTML of this webpage was created with JavaScript.");
-
     const img = document.createElement("img");
+    const secondH1 = document.createElement("h1");
+    const ul = document.createElement("ul");
+    const li1 = document.createElement("li");
+    const li2 = document.createElement("li");
+    const h2 = document.createElement("h2");
+    const a = document.createElement("a");
+    const click = document.getElementById("click");
+
+    h1.append("Webpage Recreation Practice");
+    p.append("The HTML of this webpage was created with JavaScript.");
     img.src = "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/202984001/900";
     img.alt = "This is an image of a Multicolored Tanager bird from birdsoftheworld.org";
     img.style.width = "50%";
-
-    const h2element2 = document.createElement("h2");
-    h2element2.append("Facts about the Multicolored Tanager");
-
-    const li1 = document.createElement("li");
-    const li2 = document.createElement("li");
+    secondH1.append("Fact about the Multicolored Tanager");
     li1.append("It is endemic to the mountains of Colombia.");
-    li2.append("It usually searches for insects on the underside of leaves of outer limbs while clinging to leaves with its feet.");
-    const ul = document.createElement("ul");
+    li2.append("It usually searches for insects on the underside of leaves of outer limbs while clingning to leaves with its feet.");
     ul.prepend(li1);
-    ul.prepend(li2);
-
-    const h3 = document.createElement("h3");
-    h3.append("Source");
-
-    const a = document.createElement("a");
+    ul.append(li2);
+    h2.append("Source");
     a.href = "https://en.wikipedia.org/wiki/Multicoloured_tanager";
     a.append("Wikipedia");
 
-    //Append the element to the document's body
+    function finalStep() {
+        document.body.append(p);
+        document.body.append(img);
+        document.body.append(secondH1);
+        document.body.append(ul);
+        document.body.append(li1);
+        document.body.append(li2);
+        document.body.append(h2);
+        document.body.append(a);
+    }
 
-    document.body.appendChild(h2element1);
-    document.body.appendChild(h2element2);
-    document.body.appendChild(p);
-    document.body.appendChild(img);
-    document.body.appendChild(ul);
-    document.body.appendChild(a);
+    click.addEventListener("click", function () {
+        finalStep();
+        click.setAttribute("class", "hidden");
+    });
 
 }
-
